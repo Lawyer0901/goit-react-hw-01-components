@@ -1,14 +1,22 @@
 import PropTypes from 'prop-types';
+import {
+  ProfileDiv,
+  Description,
+  Avatar,
+  Name,
+  Tag,
+  Location,
+} from './Profile.styled';
 
 export default function Profile(props) {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={props.avatar} alt={props.username} className="avatar" />
-        <p className="name">{props.username}</p>
-        <p className="tag">{props.tag}</p>
-        <p className="location">{props.location}</p>
-      </div>
+    <ProfileDiv>
+      <Description>
+        <Avatar src={props.avatar} alt={props.username} />
+        <Name>{props.username}</Name>
+        <Tag>{props.tag}</Tag>
+        <Location>{props.location}</Location>
+      </Description>
 
       <ul className="stats">
         <li>
@@ -24,7 +32,7 @@ export default function Profile(props) {
           <span className="quantity">{props.stats.likes}</span>
         </li>
       </ul>
-    </div>
+    </ProfileDiv>
   );
 }
 
