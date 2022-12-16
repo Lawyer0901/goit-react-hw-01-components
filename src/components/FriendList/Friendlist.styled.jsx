@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const FriendListCard = styled.ul`
+  margin-left: ${p => p.theme.space[4]}px;
   background-color: ${p => p.theme.colors.backgroundSecondary};
 `;
 
