@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Lawyer0901/goit-react-hw-01-components.git/static/css/main.7acaea2f.css",
-    "main.js": "/Lawyer0901/goit-react-hw-01-components.git/static/js/main.d7201cc4.js",
+    "main.css": "/Lawyer0901/goit-react-hw-01-components.git/static/css/main.15e7721b.css",
+    "main.js": "/Lawyer0901/goit-react-hw-01-components.git/static/js/main.afadc71f.js",
     "index.html": "/Lawyer0901/goit-react-hw-01-components.git/index.html",
-    "main.7acaea2f.css.map": "/Lawyer0901/goit-react-hw-01-components.git/static/css/main.7acaea2f.css.map",
-    "main.d7201cc4.js.map": "/Lawyer0901/goit-react-hw-01-components.git/static/js/main.d7201cc4.js.map"
+    "main.15e7721b.css.map": "/Lawyer0901/goit-react-hw-01-components.git/static/css/main.15e7721b.css.map",
+    "main.afadc71f.js.map": "/Lawyer0901/goit-react-hw-01-components.git/static/js/main.afadc71f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.d7201cc4.js"
+    "static/css/main.15e7721b.css",
+    "static/js/main.afadc71f.js"
   ]
 }
