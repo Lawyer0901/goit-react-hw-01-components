@@ -6,6 +6,9 @@ import {
   Name,
   Tag,
   Location,
+  StatsList,
+  StatsListInfo,
+  Quantity,
 } from './Profile.styled';
 
 export default function Profile(props) {
@@ -18,20 +21,20 @@ export default function Profile(props) {
         <Location>{props.location}</Location>
       </Description>
 
-      <ul className="stats">
-        <li>
+      <StatsList>
+        <StatsListInfo>
           <span className="label">Followers</span>
-          <span className="quantity">{props.stats.followers}</span>
-        </li>
-        <li>
+          <Quantity>{props.stats.followers}</Quantity>
+        </StatsListInfo>
+        <StatsListInfo>
           <span className="label">Views</span>
-          <span className="quantity">{props.stats.views}</span>
-        </li>
-        <li>
+          <Quantity>{props.stats.views}</Quantity>
+        </StatsListInfo>
+        <StatsListInfo>
           <span className="label">Likes</span>
-          <span className="quantity">{props.stats.likes}</span>
-        </li>
-      </ul>
+          <Quantity>{props.stats.likes}</Quantity>
+        </StatsListInfo>
+      </StatsList>
     </ProfileDiv>
   );
 }
