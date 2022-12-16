@@ -29,4 +29,8 @@ export function FriendList({ friends }) {
   );
 }
 
-FriendList.propTypes = {};
+FriendList.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool,
+};
