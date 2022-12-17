@@ -7,7 +7,7 @@ export const FriendListCard = styled.ul`
 
 export const FriendItem = styled.li`
   display: flex;
-  justify-content: center;
+
   align-items: center;
   gap: ${p => p.theme.space[4]}px;
 `;
