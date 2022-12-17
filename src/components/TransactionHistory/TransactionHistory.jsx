@@ -19,11 +19,11 @@ export function TransactionHistory({ items }) {
       </TableHead>
 
       <tbody>
-        {items.map(item => (
-          <TableRow key={item.id}>
-            <Tabledata>{item.type}</Tabledata>
-            <Tabledata>{item.amount}</Tabledata>
-            <Tabledata>{item.currency}</Tabledata>
+        {items.map(({ id, type, amount, currency }) => (
+          <TableRow key={id}>
+            <Tabledata>{type}</Tabledata>
+            <Tabledata>{amount}</Tabledata>
+            <Tabledata>{currency}</Tabledata>
           </TableRow>
         ))}
       </tbody>
@@ -32,7 +32,12 @@ export function TransactionHistory({ items }) {
 }
 
 TransactionHistory.propTypes = {
-  type: PropTypes.string.isRequired,
-  amount: PropTypes.number.isRequired,
-  currency: PropTypes.string.isRequired,
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    }).isRequired
+  ),
 };

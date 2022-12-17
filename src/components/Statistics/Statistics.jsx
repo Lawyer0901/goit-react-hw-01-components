@@ -9,12 +9,12 @@ import PropTypes from 'prop-types';
 export function Statistic({ title, stats }) {
   return (
     <SectionMain>
-      {title ? <StatisticsTitle>{title}</StatisticsTitle> : null}
+      {title && <StatisticsTitle>{title}</StatisticsTitle>}
       <StatisticsList>
-        {stats.map(stat => (
-          <StatisticsListItem key={stat.id} className="item">
-            <span className="label">{stat.label}</span>
-            <span className="percentage">{stat.percentage}</span>
+        {stats.map(({ id, label, percentage }) => (
+          <StatisticsListItem key={id}>
+            <span className="label">{label}</span>
+            <span className="percentage">{percentage}</span>
           </StatisticsListItem>
         ))}
       </StatisticsList>
@@ -24,27 +24,11 @@ export function Statistic({ title, stats }) {
 
 Statistic.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
-  }),
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
-
-//  <ul class="stat-list">
-//    <li class="item">
-//      <span class="label">.docx</span>
-//      <span class="percentage">4%</span>
-//    </li>
-//    <li class="item">
-//      <span class="label">.mp3</span>
-//      <span class="percentage">14%</span>
-//    </li>
-//    <li class="item">
-//      <span class="label">.pdf</span>
-//      <span class="percentage">41%</span>
-//    </li>
-//    <li class="item">
-//      <span class="label">.mp4</span>
-//      <span class="percentage">12%</span>
-//    </li>
-//  </ul>;

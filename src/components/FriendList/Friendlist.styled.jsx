@@ -12,16 +12,9 @@ export const FriendItem = styled.li`
   gap: ${p => p.theme.space[4]}px;
 `;
 
-export const FriendIsOnline = styled.span`
-  background-color: ${p => p.theme.colors.green};
-  border-radius: ${p => p.theme.radii.round};
-  width: 20px;
-  height: 20px;
-`;
-
-export const FriendOffLine = styled.span`
-  background-color: ${p => p.theme.colors.red};
-  border-radius: ${p => p.theme.radii.round};
-  width: 20px;
-  height: 20px;
+export const Status = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${p => (p.checkOnline ? p.theme.colors.green : p.theme.colors.red)};
 `;

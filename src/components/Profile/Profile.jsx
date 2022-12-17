@@ -11,28 +11,34 @@ import {
   Quantity,
 } from './Profile.styled';
 
-export default function Profile(props) {
+export default function Profile({
+  avatar,
+  username,
+  tag,
+  location,
+  stats: { followers, views, likes },
+}) {
   return (
     <ProfileDiv>
       <Description>
-        <Avatar src={props.avatar} alt={props.username} />
-        <Name>{props.username}</Name>
-        <Tag>{props.tag}</Tag>
-        <Location>{props.location}</Location>
+        <Avatar src={avatar} alt={username} />
+        <Name>{username}</Name>
+        <Tag>{tag}</Tag>
+        <Location>{location}</Location>
       </Description>
 
       <StatsList>
         <StatsListInfo>
           <span className="label">Followers</span>
-          <Quantity>{props.stats.followers}</Quantity>
+          <Quantity>{followers}</Quantity>
         </StatsListInfo>
         <StatsListInfo>
           <span className="label">Views</span>
-          <Quantity>{props.stats.views}</Quantity>
+          <Quantity>{views}</Quantity>
         </StatsListInfo>
         <StatsListInfo>
           <span className="label">Likes</span>
-          <Quantity>{props.stats.likes}</Quantity>
+          <Quantity>{likes}</Quantity>
         </StatsListInfo>
       </StatsList>
     </ProfileDiv>
@@ -44,9 +50,9 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.exact({
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
+  stats: PropTypes.shape({
+    likes: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
   }),
 };
